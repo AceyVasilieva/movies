@@ -1,10 +1,13 @@
 import React from 'react'
-import './Poster.css';
 
-export default function Poster() {
+import './MovieInfo.css';
+
+const MovieInfo = () => {
     return (
         <div>
             
         </div>
     )
 }
+
+export default MovieInfo;

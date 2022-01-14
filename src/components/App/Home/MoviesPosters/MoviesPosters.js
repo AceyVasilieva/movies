@@ -1,7 +1,8 @@
 import React from 'react'
-import './Pagination.css';
 
-export default function Pagination() {
+import './MoviesPosters.css'; 
+
+export const MoviesPosters = () => {
     return (
         <div>
             
