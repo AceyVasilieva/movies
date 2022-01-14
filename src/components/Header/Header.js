@@ -12,7 +12,10 @@ const Header = () => {
     return (
         <div className='header'>
             <div>
-                <Link to='/' className='logo'><FontAwesomeIcon className='logoimg' icon={faGlobe} />  Movies </Link>
+                <Link to='/' className='logo'>
+                    <FontAwesomeIcon className='logo-img' icon={faGlobe} />
+                    Movies
+                </Link>
             </div>
             <div>
                 <UserProfile />
