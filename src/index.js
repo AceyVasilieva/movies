@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 WebFont.load({
   google: {
-    families: ['Dongle:300,400,700', 'sans-serif']
+    families: ['Dongle:300', 'sans-serif', 'Lato:100']
   }
 });
  
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-    <App />,
+  <App />,
   rootElement
 );

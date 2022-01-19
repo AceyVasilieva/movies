@@ -6,13 +6,14 @@ import {
 } from 'react-router-dom';
 
 import Header from '../Header/Header';
-import Home from './Home/Home';
+import MoviesList from './MoviesList/MoviesList';
 import MovieInfo from './MovieInfo/MovieInfo';
 import Favorites from './Favorites/Favorites';
 
 import './App.css';
 
 const App = () => {
+
   return (
     <BrowserRouter>
       <div>
@@ -21,7 +22,7 @@ const App = () => {
         </div>
       </div>
       <Routes>
-          <Route path='/' element={<Home />}/>
+          <Route path='/' element={<MoviesList />}/>
           <Route path='favorites' element={<Favorites />}/>
           <Route path=':movieId' element={<MovieInfo />} />
       </Routes>
