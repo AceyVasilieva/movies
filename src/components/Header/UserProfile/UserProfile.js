@@ -17,11 +17,9 @@ const UserProfile = () => {
     return ( 
         <div className='user-profile'>
             <span  onClick={handleClick}>
-                <ul>
                     My Account 
                     <FontAwesomeIcon className='user-profile-img' icon={faChevronDown} />
-                    {isDropdownOpen && createPortal(<Dropdown />, document.getElementById('modal'))}
-                </ul>
+                    {isDropdownOpen && createPortal(<Dropdown />, document.getElementById('modal')) }
             </span>
         </div>
     )

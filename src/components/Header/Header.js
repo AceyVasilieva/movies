@@ -11,15 +11,11 @@ import './Header.css';
 const Header = () => {
     return (
         <div className='header'>
-            <div>
-                <Link to='/' className='logo'>
-                    <FontAwesomeIcon className='logo-img' icon={faGlobe} />
-                    Movies
-                </Link>
-            </div>
-            <div>
-                <UserProfile />
-            </div>
+            <Link to='/' className='logo'>
+                <FontAwesomeIcon className='logo-img' icon={faGlobe} />
+                <div>Movies</div>
+            </Link> 
+            <UserProfile />
         </div>
     )
 }

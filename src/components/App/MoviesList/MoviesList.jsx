@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../../utils/axiosInstance';
+import ReactTooltip from "react-tooltip";
 
 import './MoviesList.css';
 
@@ -12,7 +13,6 @@ const MoviesList = () => {
         setMoviesList(data.data.results)
     };
 
-
     useEffect(
         () => {
             getMoviesList();
@@ -20,9 +20,16 @@ const MoviesList = () => {
         []
     )
 
+    useEffect(() => {
+        ReactTooltip.rebuild();
+      }, [moviesList]);
+
     return (
-        <div>
-            {moviesList.map((movie) => <img src={process.env.REACT_APP_IMAGE_URL + movie.poster_path} />)}
+        <div className='movie-list'>
+            {moviesList.map((movie) => (
+                <img className='movie-poster' data-tip={movie.title} data-for='movieName' src={process.env.REACT_APP_IMAGE_URL + movie.poster_path} />
+            ))}
+            <ReactTooltip id='movieName'/>
         </div>
     )
 }

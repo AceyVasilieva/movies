@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export const Dropdown = () => {
     return (
-        <li className='user-dropdown'>
-            <Link to='/favorites'>
+        <div>
+            <Link to='/favorites' className='user-dropdown'>
                     Favorites
             </Link>
-        </li>
+        </div>
     )
 }

@@ -16,11 +16,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div>
-        <div>
-          <Header />
-        </div>
-      </div>
+      <Header />
       <Routes>
           <Route path='/' element={<MoviesList />}/>
           <Route path='favorites' element={<Favorites />}/>
