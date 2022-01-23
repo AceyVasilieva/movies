@@ -1,3 +1,15 @@
+.category {
+    display: block;
+    position: absolute;
+    padding-left: 50px;
+    padding-top: 20px;
+    color: #474d59;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+}
+
 .movie-list {
     margin-top: 65px;
     padding: 45px;
@@ -14,3 +26,4 @@
     width: calc((100% - 12 * 6px) / 6);
     max-width: 100%;
 }
+
