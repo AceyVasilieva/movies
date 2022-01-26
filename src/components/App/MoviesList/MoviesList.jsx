@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../../utils/axiosInstance';
 import ReactTooltip from "react-tooltip";
-import ReactPaginate from 'react-paginate';
+import Pagination from "react-js-pagination";
 
 import './MoviesList.css';
 
@@ -9,6 +9,7 @@ const MoviesList = () => {
 
     const [moviesList, setMoviesList] = useState([]);
     const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
 
     const getMoviesList = async () => {
         const data = await axiosInstance.get(`/movie/now_playing`, {
@@ -17,10 +18,11 @@ const MoviesList = () => {
             }
           })
         setMoviesList(data.data.results)
+        setTotalPages(data.data.total_pages)
     };
 
-    const handlePageChange = (data) => {
-        setPage(data.selected + 1);
+    const handlePageChange = (pageNumber) => {
+        setPage(pageNumber);
     }
 
     useEffect(
@@ -53,23 +55,21 @@ const MoviesList = () => {
                 <ReactTooltip id='movieName'/>
             </div>
             <nav aria-label='Page navigation' >
-                <ReactPaginate 
-                    previousLabel={'Prev'}
-                    nextLabel={'Next'}
-                    breakLabel={'...'}
-                    pageCount={1000}
-                    marginPagesDisplayed={0}
-                    onPageChange={handlePageChange}
-                    containerClassName='pagination justify-content-center'
-                    pageClassName='page-item'
-                    pageLinkClassName='page-link'
-                    previousClassName='page-item'
-                    previousLinkClassName='page-link'
-                    nextClassName='page-item'
-                    nextLinkClassName='page-link'
-                    breakClassName='page-item'
-                    breakLinkClassName='page-link'
-                    activeClassName='active'
+                <Pagination
+                    activePage={page}
+                    totalItemsCount={totalPages}
+                    pageRangeDisplayed={3}
+                    itemsCountPerPage={1}
+                    onChange={handlePageChange}
+                    prevPageText={'Prev'}
+                    nextPageText={'Next'}
+                    firstPageText={'First'}
+                    lastPageText={'Last'}
+                    innerClass='pagination'  
+                    linkClass='page-link'
+                    linkClassFirst='first'
+                    linkClassLast='last'
+                    activeLinkClass='active'
                 />
             </nav>
         </div>
