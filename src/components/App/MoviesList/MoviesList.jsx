@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../../utils/axiosInstance';
-import ReactTooltip from "react-tooltip";
-import Pagination from "react-js-pagination";
+import ReactTooltip from 'react-tooltip';
+import Pagination from 'react-js-pagination';
+import {  useNavigate } from 'react-router-dom';
 
 import './MoviesList.css';
 
@@ -10,15 +11,16 @@ const MoviesList = () => {
     const [moviesList, setMoviesList] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
+    const navigate = useNavigate();
 
     const getMoviesList = async () => {
-        const data = await axiosInstance.get(`/movie/now_playing`, {
+        const { data } = await axiosInstance.get(`/movie/now_playing`, {
             params: {
               page: page,
             }
           })
-        setMoviesList(data.data.results)
-        setTotalPages(data.data.total_pages)
+        setMoviesList(data.results)
+        setTotalPages(data.total_pages)
     };
 
     const handlePageChange = (pageNumber) => {
@@ -44,12 +46,13 @@ const MoviesList = () => {
             <div className='movie-list'>
                 {moviesList.map((movie) => (
                     <img 
+                        onClick={() => navigate(`/movie-details/${movie.id}`, { replace: true })}
                         key={movie.id} 
                         src={process.env.REACT_APP_IMAGE_URL + movie.poster_path}
                         alt={movie.title}
                         className='movie-poster'
                         data-tip={movie.title} 
-                        data-for='movieName'   
+                        data-for='movieName'
                     />
                 ))}
                 <ReactTooltip id='movieName'/>

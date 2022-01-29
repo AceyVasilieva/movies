@@ -2,7 +2,7 @@
     display: block;
     position: absolute;
     padding-left: 50px;
-    padding-top: 20px;
+    padding-top: 30px;
     color: #474d59;
     font-family: 'Lato', sans-serif;
     font-weight: bold;
@@ -11,7 +11,6 @@
 }
 
 .movie-list {
-    margin-top: 65px;
     padding: 45px;
     display: flex;
     flex-wrap: wrap;
@@ -19,12 +18,18 @@
 }
 
 .movie-poster { 
+    cursor: pointer;
     border: 1px;
     border-radius: 3px;
     box-shadow: 5px 5px 10px 3px #c7cbce;
     margin: 6px;
     width: calc((100% - 12 * 6px) / 6);
     max-width: 100%;
+    transition: transform 0.3s;
+}
+
+.movie-poster:hover {
+    transform: scale(1.05);
 }
 
 .pagination {
