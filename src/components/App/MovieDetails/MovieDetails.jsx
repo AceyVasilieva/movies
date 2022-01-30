@@ -1,14 +1,16 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import axiosInstance from '../../../utils/axiosInstance';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import './MovieDetails.css';
 
-const MovieDetails = () => {
+const MovieDetails = (props) => {
 
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [movie, setMovie] = useState(null);
 
@@ -16,6 +18,20 @@ const MovieDetails = () => {
         const { data } = await axiosInstance.get(`/movie/${id}`)
         setMovie(data)
     };
+
+    const goToNextMovie = () => {
+        const currentIdIndex = props.moviesList.map((el) => el.id).indexOf(+id);
+        if (currentIdIndex === props.moviesList.length - 1) {
+            alert('This is the last movie on the page');
+            return
+        } else {
+            navigate(`/movie-details/${props.moviesList[currentIdIndex + 1].id}`);
+        }
+    }
+
+    const goBackToList = () => {
+        navigate('/');
+    }
 
     useEffect(
         () => {
@@ -35,14 +51,14 @@ const MovieDetails = () => {
                 alt='Background image' 
                 className='background-img' />
             <div className='top-buttons'>
-                <a href='' className='back-button'>
+                <div onClick={goBackToList} className='back-button'>
                     <FontAwesomeIcon className='left-arrow-img' icon={faArrowLeft} />
                     <div>Back to List</div>
-                </a> 
-                <a href='' className='next-button'>
+                </div> 
+                <div onClick={goToNextMovie} className='next-button'>
                     <div>Next Movie</div>
                     <FontAwesomeIcon className='right-arrow-img' icon={faArrowRight} />
-                </a>
+                </div>
             </div>
             <div className='main-content'>
                 <img 
