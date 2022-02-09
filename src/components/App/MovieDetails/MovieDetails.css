@@ -23,42 +23,23 @@
     justify-content: space-between;
     align-items: center;
     font-family: 'Lato', sans-serif;
+    color: white;
     font-size: 24px;
     line-height: 24px;
     text-decoration: none;
     
 }
 
-.back-button {
+.back-next-button {
     display: flex;
-    float: left;
     position: relative;
     cursor: pointer;
     height: auto;
     align-items: center;
-    color: white;
-    text-decoration: none;
     transition: transform 0.3s;
 }
 
-.back-button:hover {
-    color: white;
-    transform: scale(1.1);
-}
-
-.next-button {
-    display: flex;
-    float: right;
-    position: relative;
-    cursor: pointer;
-    height: auto;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    transition: transform 0.3s;
-}
-
-.next-button:hover {
+.back-next-button:hover {
     color: white;
     transform: scale(1.1);
 }
@@ -87,7 +68,6 @@
     border: 1px;
     box-shadow: 5px 5px 10px 3px #15151f;
     width: calc(100% / 6);
-    max-width: 100%;
 }
 
 .main-text {
@@ -134,7 +114,14 @@
 .score {
     display: inline;
     padding-right: 13px;
+}
+
+.rating {
+    display: inline;
+    padding-right: 13px;
+    padding-left: 13px;
     border-right: 1px solid hsla(0, 0%, 100%, .5);
+    border-left: 1px solid hsla(0, 0%, 100%, .5);
 }
 
 .release-date {
@@ -144,8 +131,7 @@
 
 .overview {
     margin-top: 35px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
     border-top: 1px solid hsla(0, 0%, 100%, .5);
     border-bottom: 1px solid hsla(0, 0%, 100%, .5);
     font-size: 14px;
