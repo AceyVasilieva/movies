@@ -1,4 +1,5 @@
 .user-profile {
+    cursor: pointer;
     position: relative;
     border: 1px solid #ffffff;
     border-radius: 3px;
@@ -24,6 +25,7 @@
 }
 
 .user-dropdown {
+    z-index: 100;
     border: 1px solid #ffffff;
     border-radius: 3px;
     position: fixed;

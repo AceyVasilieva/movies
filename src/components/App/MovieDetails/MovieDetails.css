@@ -1,0 +1,139 @@
+.details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.background-img {
+    pointer-events: none;
+    position: fixed; 
+    top: 65px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    filter: blur(15px);
+    transform: scale(1.1);
+    object-fit: cover;
+    z-index: 0;
+}
+
+.top-buttons {
+    display: flex;
+    padding: 40px 30px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 24px;
+    line-height: 24px;
+    text-decoration: none;
+    
+}
+
+.back-next-button {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    height: auto;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.back-next-button:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.left-arrow-img {
+    display:block;
+    margin-right: 35px;
+    font-size: 16px;
+}
+
+.right-arrow-img {
+    display:block;
+    margin-left: 35px;
+    font-size: 16px;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 200px);
+    z-index: 3;
+    margin: 80px 100px;
+}
+
+.poster {
+    border: 1px;
+    box-shadow: 5px 5px 10px 3px #15151f;
+    width: calc(100% / 6);
+}
+
+.main-text {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 20px 30px;
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.add-to-favorite {
+    opacity: .8;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    cursor: pointer;
+    border: 1px solid hsla(0, 0%, 100%, .5);
+    border-radius: 4px;
+    padding: 7px 8px 7px 10px;
+    width: 120px;
+    height: fit-content;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.title {
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.movie-details {
+    padding-top: 20px;
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.score {
+    display: inline;
+    padding-right: 13px;
+}
+
+.rating {
+    display: inline;
+    padding-right: 13px;
+    padding-left: 13px;
+    border-right: 1px solid hsla(0, 0%, 100%, .5);
+    border-left: 1px solid hsla(0, 0%, 100%, .5);
+}
+
+.release-date {
+    display: inline;
+    padding-left: 13px;
+}
+
+.overview {
+    margin-top: 35px;
+    padding: 15px;
+    border-top: 1px solid hsla(0, 0%, 100%, .5);
+    border-bottom: 1px solid hsla(0, 0%, 100%, .5);
+    font-size: 14px;
+    line-height: 18px;
+}
