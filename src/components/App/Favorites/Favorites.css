@@ -1,0 +1,26 @@
+.page-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-top: 30px;
+    color: #474d59;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.favorites-default-text {
+    font-size: 36px;
+    margin-top: 80px;
+}
+
+.content {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
