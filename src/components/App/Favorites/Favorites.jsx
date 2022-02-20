@@ -14,8 +14,14 @@ const Favorites = () => {
             console.log(movies)
             setMovies(movies)
         },
-        [JSON.parse(localStorage.getItem('favoriteMovies')).lenght]
+        []
     )
+
+    const update = (id) => {
+        const removeFromList = movies.filter(item => item.id !== id);
+        localStorage.setItem('favoriteMovies', JSON.stringify(removeFromList));
+        setMovies(removeFromList)
+    }
 
     return (
         <div className='content'>
@@ -25,6 +31,7 @@ const Favorites = () => {
                     <Movie 
                         key={movie.id} 
                         movie={movie}
+                        update={update}
                     />
                 ))}
             </div>
