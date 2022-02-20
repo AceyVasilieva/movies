@@ -45,3 +45,39 @@
     color: #ffffff;
     text-decoration: none;
 }
+
+@media screen and (max-width: 1832.5px){
+    .user-dropdown {
+        top: 5.5%;
+    }
+}
+
+@media screen and (max-width: 1280.5px){
+    .user-dropdown {
+        top: 6%;
+    }
+}
+
+@media screen and (max-width: 1024.5px){
+    .user-dropdown {
+        top: 8%;
+    }
+}
+
+@media screen and (max-width: 820.5px){
+    .user-dropdown {
+        top: 4%;
+    }
+}
+
+@media screen and (max-width: 414.5px){
+    .user-dropdown {
+        top: 5.3%;
+    }
+}
+
+@media screen and (max-width: 375.5px){
+    .user-dropdown {
+        top: 7%;
+    }
+}

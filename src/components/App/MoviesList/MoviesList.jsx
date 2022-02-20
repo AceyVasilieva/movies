@@ -19,7 +19,7 @@ const MoviesList = (props) => {
       }, [props.moviesList]);
 
     return (
-        <div>
+        <div className='flex-container'>
             <div className='category'>
                 <p>Latest Releases</p>
             </div>

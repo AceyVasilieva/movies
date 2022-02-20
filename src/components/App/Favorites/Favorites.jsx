@@ -14,7 +14,7 @@ const Favorites = () => {
             console.log(movies)
             setMovies(movies)
         },
-        [JSON.parse(localStorage.getItem('favoriteMovies'))]
+        [JSON.parse(localStorage.getItem('favoriteMovies')).lenght]
     )
 
     return (

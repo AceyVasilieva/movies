@@ -1,16 +1,18 @@
 .category {
     display: block;
     position: absolute;
-    padding-left: 50px;
+    padding-left: 62px;
     padding-top: 30px;
     color: #474d59;
     font-family: 'Lato', sans-serif;
     font-weight: bold;
     font-size: 16px;
     line-height: 16px;
+    flex: 1;
 }
 
 .movie-list {
+    flex: 4;
     padding: 45px;
     display: flex;
     flex-wrap: wrap;
@@ -23,8 +25,7 @@
     border-radius: 3px;
     box-shadow: 5px 5px 10px 3px #c7cbce;
     margin: 6px;
-    width: calc((100% - 12 * 6px) / 6);
-    max-width: 100%;
+    width: 286.22px !important;
     transition: transform 0.3s;
 }
 
@@ -33,11 +34,10 @@
 }
 
 .pagination {
-    display: inline-block;
+    flex: 1;
     justify-content: center;
     margin-bottom: 70px;
     color: #3eb897;
-    background-color: white;
     box-shadow:none !important;
     outline:0px !important;
 }
@@ -57,4 +57,51 @@
 .page-link.active {
     font-weight: 900 !important;
     color: #3eb897 !important;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1832.5px){
+    .category {
+        margin-left: 112px;
+    }
+}
+
+@media screen and (max-width: 1280.5px){
+    .movie-poster { 
+        width: 280px !important;
+    }
+    .category {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 1024.5px){
+    .movie-poster { 
+        width: 292px !important;
+    }
+}
+
+@media screen and (max-width: 393.5px) {
+    .category {
+        margin-left: -12px;
+    }
+}
+
+@media screen and (max-width: 375.5px){
+    .movie-poster { 
+        width: 300px !important;
+        padding: 0;
+        margin-bottom: 6px;
+    }
+    .category {
+        margin-left: -25px !important;
+    }
+    .movie-list {
+        padding-top: 45px;
+        padding-left: 45px;
+    }
 }

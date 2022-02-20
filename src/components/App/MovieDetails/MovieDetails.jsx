@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 import axiosInstance from '../../../utils/axiosInstance';
 import { useParams, useNavigate } from 'react-router-dom';
 import moment from 'moment';
@@ -83,10 +84,12 @@ const MovieDetails = (props) => {
             <div className='top-buttons'>
                 <div onClick={goBackToList} className='back-next-button'>
                     <FontAwesomeIcon className='left-arrow-img' icon={faArrowLeft} />
-                    <div>Back to List</div>
+                    <div className='back-button-full-size'>Back to List</div>
+                    <div className='back-button-phone-size'>Back</div>
                 </div> 
                 <div onClick={goToNextMovie} className='back-next-button'>
-                    <div>Next Movie</div>
+                    <div className='next-button-full-size'>Next Movie</div>
+                    <div className='next-button-phone-size'>Next</div>
                     <FontAwesomeIcon className='right-arrow-img' icon={faArrowRight} />
                 </div>
             </div>
@@ -98,24 +101,37 @@ const MovieDetails = (props) => {
                 />
                 <div className='main-text'>
                     <div className='add-to-favorite' onClick={addToFavorite}>
-                        {isFavorite ? 'Remove' : 'Add to favorite'}
+                        <div className='add-to-favorite-full-size'>
+                            {isFavorite ? 'Remove' : 'Add to favorite'}
+                        </div>
+                        <div className='add-to-favorite-phone-size'>
+                            {isFavorite ? <FaStar /> : <FaRegStar /> }
+                        </div>
                     </div>
                     <div className='title'>
                         {movie.title}
                     </div>
                     <div className='movie-details'>
-                            <p className='score'>
-                                Score: {movie.vote_average}
-                            </p>
-                            <p className='rating'>
-                                Rating: {isAdult ? 'NC-17' : 'PG'}
-                            </p>
-                            <p className='release-date'>
-                                Release Date: {releaseDate}
-                            </p>
-                            <p className='overview'>
+                            <div className='average-info'>
+                                <div className='score phone-size-movie-details'>
+                                    Score: 
+                                    <br />
+                                    {movie.vote_average}
+                                </div>
+                                <div className='rating phone-size-movie-details'>
+                                    Rating: 
+                                    <br />
+                                    {isAdult ? 'NC-17' : 'PG'}
+                                </div>
+                                <div className='release-date phone-size-movie-details'>
+                                    Release Date: 
+                                    <br />
+                                    {releaseDate}
+                                </div>
+                            </div>
+                            <div className='overview'>
                                 {movie.overview}
-                            </p>
+                            </div>
                     </div>
                 </div>
             </div>
